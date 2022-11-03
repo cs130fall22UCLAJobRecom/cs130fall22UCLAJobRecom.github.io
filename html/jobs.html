@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jobs package &mdash; jobrecom 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> jobrecom
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">jobs package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-jobs.apps">jobs.apps module</a><ul>
+<li><a class="reference internal" href="#jobs.apps.JobsConfig"><code class="docutils literal notranslate"><span class="pre">JobsConfig</span></code></a><ul>
+<li><a class="reference internal" href="#jobs.apps.JobsConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">JobsConfig.default_auto_field</span></code></a></li>
+<li><a class="reference internal" href="#jobs.apps.JobsConfig.name"><code class="docutils literal notranslate"><span class="pre">JobsConfig.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jobs.forms">jobs.forms module</a><ul>
+<li><a class="reference internal" href="#jobs.forms.CommentForm"><code class="docutils literal notranslate"><span class="pre">CommentForm</span></code></a><ul>
+<li><a class="reference internal" href="#jobs.forms.CommentForm.Meta"><code class="docutils literal notranslate"><span class="pre">CommentForm.Meta</span></code></a><ul>
+<li><a class="reference internal" href="#jobs.forms.CommentForm.Meta.fields"><code class="docutils literal notranslate"><span class="pre">CommentForm.Meta.fields</span></code></a></li>
+<li><a class="reference internal" href="#jobs.forms.CommentForm.Meta.model"><code class="docutils literal notranslate"><span class="pre">CommentForm.Meta.model</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jobs.forms.CommentForm.base_fields"><code class="docutils literal notranslate"><span class="pre">CommentForm.base_fields</span></code></a></li>
+<li><a class="reference internal" href="#jobs.forms.CommentForm.declared_fields"><code class="docutils literal notranslate"><span class="pre">CommentForm.declared_fields</span></code></a></li>
+<li><a class="reference internal" href="#jobs.forms.CommentForm.media"><code class="docutils literal notranslate"><span class="pre">CommentForm.media</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jobs.forms.JobForm"><code class="docutils literal notranslate"><span class="pre">JobForm</span></code></a><ul>
+<li><a class="reference internal" href="#jobs.forms.JobForm.Meta"><code class="docutils literal notranslate"><span class="pre">JobForm.Meta</span></code></a><ul>
+<li><a class="reference internal" href="#jobs.forms.JobForm.Meta.fields"><code class="docutils literal notranslate"><span class="pre">JobForm.Meta.fields</span></code></a></li>
+<li><a class="reference internal" href="#jobs.forms.JobForm.Meta.model"><code class="docutils literal notranslate"><span class="pre">JobForm.Meta.model</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jobs.forms.JobForm.base_fields"><code class="docutils literal notranslate"><span class="pre">JobForm.base_fields</span></code></a></li>
+<li><a class="reference internal" href="#jobs.forms.JobForm.declared_fields"><code class="docutils literal notranslate"><span class="pre">JobForm.declared_fields</span></code></a></li>
+<li><a class="reference internal" href="#jobs.forms.JobForm.media"><code class="docutils literal notranslate"><span class="pre">JobForm.media</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jobs.models">jobs.models module</a><ul>
+<li><a class="reference internal" href="#jobs.models.Comment"><code class="docutils literal notranslate"><span class="pre">Comment</span></code></a><ul>
+<li><a class="reference internal" href="#jobs.models.Comment.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Comment.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.LEVEL_1"><code class="docutils literal notranslate"><span class="pre">Comment.LEVEL_1</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.LEVEL_2"><code class="docutils literal notranslate"><span class="pre">Comment.LEVEL_2</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.LEVEL_3"><code class="docutils literal notranslate"><span class="pre">Comment.LEVEL_3</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.LEVEL_4"><code class="docutils literal notranslate"><span class="pre">Comment.LEVEL_4</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.LEVEL_5"><code class="docutils literal notranslate"><span class="pre">Comment.LEVEL_5</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Comment.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.VOTE_TYPE"><code class="docutils literal notranslate"><span class="pre">Comment.VOTE_TYPE</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.comment_body"><code class="docutils literal notranslate"><span class="pre">Comment.comment_body</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.created_date"><code class="docutils literal notranslate"><span class="pre">Comment.created_date</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.get_next_by_created_date"><code class="docutils literal notranslate"><span class="pre">Comment.get_next_by_created_date()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.get_previous_by_created_date"><code class="docutils literal notranslate"><span class="pre">Comment.get_previous_by_created_date()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.get_vote_display"><code class="docutils literal notranslate"><span class="pre">Comment.get_vote_display()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.id"><code class="docutils literal notranslate"><span class="pre">Comment.id</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.job"><code class="docutils literal notranslate"><span class="pre">Comment.job</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.job_id"><code class="docutils literal notranslate"><span class="pre">Comment.job_id</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.objects"><code class="docutils literal notranslate"><span class="pre">Comment.objects</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.update_rate"><code class="docutils literal notranslate"><span class="pre">Comment.update_rate()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Comment.vote"><code class="docutils literal notranslate"><span class="pre">Comment.vote</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jobs.models.Department"><code class="docutils literal notranslate"><span class="pre">Department</span></code></a><ul>
+<li><a class="reference internal" href="#jobs.models.Department.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Department.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Department.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Department.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Department.id"><code class="docutils literal notranslate"><span class="pre">Department.id</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Department.job_set"><code class="docutils literal notranslate"><span class="pre">Department.job_set</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Department.name"><code class="docutils literal notranslate"><span class="pre">Department.name</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Department.objects"><code class="docutils literal notranslate"><span class="pre">Department.objects</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jobs.models.Job"><code class="docutils literal notranslate"><span class="pre">Job</span></code></a><ul>
+<li><a class="reference internal" href="#jobs.models.Job.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Job.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Job.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.comment_set"><code class="docutils literal notranslate"><span class="pre">Job.comment_set</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.created_date"><code class="docutils literal notranslate"><span class="pre">Job.created_date</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.department"><code class="docutils literal notranslate"><span class="pre">Job.department</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.department_id"><code class="docutils literal notranslate"><span class="pre">Job.department_id</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.description"><code class="docutils literal notranslate"><span class="pre">Job.description</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.get_next_by_created_date"><code class="docutils literal notranslate"><span class="pre">Job.get_next_by_created_date()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.get_previous_by_created_date"><code class="docutils literal notranslate"><span class="pre">Job.get_previous_by_created_date()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.id"><code class="docutils literal notranslate"><span class="pre">Job.id</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.job_link"><code class="docutils literal notranslate"><span class="pre">Job.job_link</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.location"><code class="docutils literal notranslate"><span class="pre">Job.location</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.objects"><code class="docutils literal notranslate"><span class="pre">Job.objects</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.owner"><code class="docutils literal notranslate"><span class="pre">Job.owner</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.owner_id"><code class="docutils literal notranslate"><span class="pre">Job.owner_id</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.rating_count"><code class="docutils literal notranslate"><span class="pre">Job.rating_count</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.rating_total"><code class="docutils literal notranslate"><span class="pre">Job.rating_total</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.ratings"><code class="docutils literal notranslate"><span class="pre">Job.ratings</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.tags"><code class="docutils literal notranslate"><span class="pre">Job.tags</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.title"><code class="docutils literal notranslate"><span class="pre">Job.title</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Job.update_rate"><code class="docutils literal notranslate"><span class="pre">Job.update_rate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jobs.models.Tag"><code class="docutils literal notranslate"><span class="pre">Tag</span></code></a><ul>
+<li><a class="reference internal" href="#jobs.models.Tag.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Tag.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Tag.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Tag.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Tag.id"><code class="docutils literal notranslate"><span class="pre">Tag.id</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Tag.job_set"><code class="docutils literal notranslate"><span class="pre">Tag.job_set</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Tag.name"><code class="docutils literal notranslate"><span class="pre">Tag.name</span></code></a></li>
+<li><a class="reference internal" href="#jobs.models.Tag.objects"><code class="docutils literal notranslate"><span class="pre">Tag.objects</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jobs.views">jobs.views module</a><ul>
+<li><a class="reference internal" href="#jobs.views.create_job"><code class="docutils literal notranslate"><span class="pre">create_job()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.views.delete_job"><code class="docutils literal notranslate"><span class="pre">delete_job()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.views.get_all_jobs"><code class="docutils literal notranslate"><span class="pre">get_all_jobs()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.views.get_job_by_department"><code class="docutils literal notranslate"><span class="pre">get_job_by_department()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.views.get_single_job"><code class="docutils literal notranslate"><span class="pre">get_single_job()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.views.homePage"><code class="docutils literal notranslate"><span class="pre">homePage()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li><a class="reference internal" href="#jobs.views.update_job"><code class="docutils literal notranslate"><span class="pre">update_job()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-jobs">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">jobrecom</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">jobs package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/jobs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jobs-package">
+<h1>jobs package<a class="headerlink" href="#jobs-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-jobs.apps">
+<span id="jobs-apps-module"></span><h2>jobs.apps module<a class="headerlink" href="#module-jobs.apps" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jobs.apps.JobsConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jobs.apps.</span></span><span class="sig-name descname"><span class="pre">JobsConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.apps.JobsConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.apps.JobsConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#jobs.apps.JobsConfig.default_auto_field" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.apps.JobsConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'jobs'</span></em><a class="headerlink" href="#jobs.apps.JobsConfig.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-jobs.forms">
+<span id="jobs-forms-module"></span><h2>jobs.forms module<a class="headerlink" href="#module-jobs.forms" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jobs.forms.CommentForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jobs.forms.</span></span><span class="sig-name descname"><span class="pre">CommentForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.forms.CommentForm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<p>This class is inherited from ModelForm of Django and designed for 
+student users to leave comment towards a specific job.</p>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>model<span class="classifier">Comment</span></dt><dd><p>The target model where this form points to.</p>
+</dd>
+<dt>fields<span class="classifier">list</span></dt><dd><p>Include basic editable information for a Comment item.</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="jobs.forms.CommentForm.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="headerlink" href="#jobs.forms.CommentForm.Meta" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.forms.CommentForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['vote',</span> <span class="pre">'comment_body']</span></em><a class="headerlink" href="#jobs.forms.CommentForm.Meta.fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.forms.CommentForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#jobs.forms.CommentForm.Meta.model" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#jobs.models.Comment" title="jobs.models.Comment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Comment</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.forms.CommentForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'comment_body':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'vote':</span> <span class="pre">&lt;django.forms.fields.TypedChoiceField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#jobs.forms.CommentForm.base_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.forms.CommentForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#jobs.forms.CommentForm.declared_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jobs.forms.CommentForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#jobs.forms.CommentForm.media" title="Permalink to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jobs.forms.JobForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jobs.forms.</span></span><span class="sig-name descname"><span class="pre">JobForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.forms.JobForm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<p>This class is inherited from ModelForm of Django and designed for wrapping 
+the information of a newly created job item or the updated information 
+of an existed job item.</p>
+<section id="id1">
+<h3>Attributes<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>model<span class="classifier">Job</span></dt><dd><p>The target model where this form points to.</p>
+</dd>
+<dt>fields<span class="classifier">list</span></dt><dd><p>Include basic editable information for a job item.</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="jobs.forms.JobForm.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="headerlink" href="#jobs.forms.JobForm.Meta" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.forms.JobForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['title',</span> <span class="pre">'description',</span> <span class="pre">'location',</span> <span class="pre">'department']</span></em><a class="headerlink" href="#jobs.forms.JobForm.Meta.fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.forms.JobForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#jobs.forms.JobForm.Meta.model" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#jobs.models.Job" title="jobs.models.Job"><code class="xref py py-class docutils literal notranslate"><span class="pre">Job</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.forms.JobForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'department':</span> <span class="pre">&lt;django.forms.models.ModelChoiceField</span> <span class="pre">object&gt;,</span> <span class="pre">'description':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'location':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'title':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#jobs.forms.JobForm.base_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.forms.JobForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#jobs.forms.JobForm.declared_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="jobs.forms.JobForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#jobs.forms.JobForm.media" title="Permalink to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-jobs.models">
+<span id="jobs-models-module"></span><h2>jobs.models module<a class="headerlink" href="#module-jobs.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="jobs.models.Comment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jobs.models.</span></span><span class="sig-name descname"><span class="pre">Comment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.models.Comment" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Comment database model: for users to leave anonymous comments and to rate
+a job based on their working experience.</p>
+<section id="id2">
+<h3>Attributes<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>id<span class="classifier">models.UUIDField</span></dt><dd><p>The id of a comment.</p>
+</dd>
+<dt>created_date<span class="classifier">models.DateTimeField</span></dt><dd><p>Created date of a comment (auto-generated).</p>
+</dd>
+<dt>job<span class="classifier">Job</span></dt><dd><p>refers to a specific job via foreign key.</p>
+</dd>
+<dt>comment_body<span class="classifier">models.TextField</span></dt><dd><p>Comment text content.</p>
+</dd>
+<dt>vote<span class="classifier">models.PositiveIntegerField</span></dt><dd><p>To indicate the satisfication level of the user.</p>
+</dd>
+</dl>
+</section>
+<section id="methods">
+<h3>Methods<a class="headerlink" href="#methods" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>__str__(self)</dt><dd><p>Prints the satisfication level.</p>
+</dd>
+<dt>update_rate(self)</dt><dd><p>Update the rating of a Job.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="jobs.models.Comment.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#jobs.models.Comment.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.LEVEL_1">
+<span class="sig-name descname"><span class="pre">LEVEL_1</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#jobs.models.Comment.LEVEL_1" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.LEVEL_2">
+<span class="sig-name descname"><span class="pre">LEVEL_2</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#jobs.models.Comment.LEVEL_2" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.LEVEL_3">
+<span class="sig-name descname"><span class="pre">LEVEL_3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#jobs.models.Comment.LEVEL_3" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.LEVEL_4">
+<span class="sig-name descname"><span class="pre">LEVEL_4</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#jobs.models.Comment.LEVEL_4" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.LEVEL_5">
+<span class="sig-name descname"><span class="pre">LEVEL_5</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#jobs.models.Comment.LEVEL_5" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="jobs.models.Comment.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#jobs.models.Comment.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.VOTE_TYPE">
+<span class="sig-name descname"><span class="pre">VOTE_TYPE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[(5,</span> <span class="pre">'very</span> <span class="pre">satisfied</span> <span class="pre">(5)'),</span> <span class="pre">(4,</span> <span class="pre">'satisfied</span> <span class="pre">(4)'),</span> <span class="pre">(3,</span> <span class="pre">'neutral</span> <span class="pre">(3)'),</span> <span class="pre">(2,</span> <span class="pre">'dissatisfied</span> <span class="pre">(2)'),</span> <span class="pre">(1,</span> <span class="pre">'very</span> <span class="pre">dissatisfied</span> <span class="pre">(1)')]</span></em><a class="headerlink" href="#jobs.models.Comment.VOTE_TYPE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.comment_body">
+<span class="sig-name descname"><span class="pre">comment_body</span></span><a class="headerlink" href="#jobs.models.Comment.comment_body" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.created_date">
+<span class="sig-name descname"><span class="pre">created_date</span></span><a class="headerlink" href="#jobs.models.Comment.created_date" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jobs.models.Comment.get_next_by_created_date">
+<span class="sig-name descname"><span class="pre">get_next_by_created_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.models.Comment.get_next_by_created_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jobs.models.Comment.get_previous_by_created_date">
+<span class="sig-name descname"><span class="pre">get_previous_by_created_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.models.Comment.get_previous_by_created_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jobs.models.Comment.get_vote_display">
+<span class="sig-name descname"><span class="pre">get_vote_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.PositiveIntegerField:</span> <span class="pre">vote&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.models.Comment.get_vote_display" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#jobs.models.Comment.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.job">
+<span class="sig-name descname"><span class="pre">job</span></span><a class="headerlink" href="#jobs.models.Comment.job" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.job_id">
+<span class="sig-name descname"><span class="pre">job_id</span></span><a class="headerlink" href="#jobs.models.Comment.job_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#jobs.models.Comment.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jobs.models.Comment.update_rate">
+<span class="sig-name descname"><span class="pre">update_rate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#jobs.models.Comment.update_rate" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a string for rating. This is required to display genre in Admin.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Comment.vote">
+<span class="sig-name descname"><span class="pre">vote</span></span><a class="headerlink" href="#jobs.models.Comment.vote" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jobs.models.Department">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jobs.models.</span></span><span class="sig-name descname"><span class="pre">Department</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.models.Department" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Department database model</p>
+<section id="id3">
+<h3>Attributes<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>id<span class="classifier">str (uuid)</span></dt><dd><p>The id of a department.</p>
+</dd>
+<dt>name: models.CharField (str)</dt><dd><p>The name of department</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h3>Methods<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>__str__(self)</dt><dd><p>Prints department name.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="jobs.models.Department.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#jobs.models.Department.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="jobs.models.Department.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#jobs.models.Department.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Department.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#jobs.models.Department.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Department.job_set">
+<span class="sig-name descname"><span class="pre">job_set</span></span><a class="headerlink" href="#jobs.models.Department.job_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Department.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#jobs.models.Department.name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Department.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#jobs.models.Department.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jobs.models.Job">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jobs.models.</span></span><span class="sig-name descname"><span class="pre">Job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.models.Job" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Job database model: Contains basic information about posted jobs</p>
+<section id="id5">
+<h3>Attributes<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>id<span class="classifier">models.UUIDField</span></dt><dd><p>The id of a job</p>
+</dd>
+<dt>created_date<span class="classifier">models.DateTimeField</span></dt><dd><p>Created date of a job (auto-generated)</p>
+</dd>
+<dt>title<span class="classifier">models.CharField</span></dt><dd><p>Title of the posted job</p>
+</dd>
+<dt>description<span class="classifier">models.TextField</span></dt><dd><p>Decription of the posted job</p>
+</dd>
+<dt>location<span class="classifier">models.CharField</span></dt><dd><p>Working location</p>
+</dd>
+<dt>job_link<span class="classifier">models.CharField</span></dt><dd><p>Link to job detail page</p>
+</dd>
+<dt>department<span class="classifier">Department</span></dt><dd><p>Refers to the department a job belongs via foreign key.</p>
+</dd>
+<dt>tags<span class="classifier">models.ManyToManyField</span></dt><dd><p>A list of tags (summary)</p>
+</dd>
+<dt>rating_total<span class="classifier">models.PositiveIntegerField</span></dt><dd><p>Total score of ratings/comments</p>
+</dd>
+<dt>rating_count<span class="classifier">models.PositiveIntegerField</span></dt><dd><p>Number of ratings/comments</p>
+</dd>
+<dt>ratings<span class="classifier">models.FloatField</span></dt><dd><p>Average rating of a job</p>
+</dd>
+</dl>
+</section>
+<section id="id6">
+<h3>Methods<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>__str__(self)</dt><dd><p>Prints Job title.</p>
+</dd>
+<dt>update_rate(self, rate: int)</dt><dd><p>Update rating based on comments.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="jobs.models.Job.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#jobs.models.Job.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="jobs.models.Job.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#jobs.models.Job.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.comment_set">
+<span class="sig-name descname"><span class="pre">comment_set</span></span><a class="headerlink" href="#jobs.models.Job.comment_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.created_date">
+<span class="sig-name descname"><span class="pre">created_date</span></span><a class="headerlink" href="#jobs.models.Job.created_date" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.department">
+<span class="sig-name descname"><span class="pre">department</span></span><a class="headerlink" href="#jobs.models.Job.department" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.department_id">
+<span class="sig-name descname"><span class="pre">department_id</span></span><a class="headerlink" href="#jobs.models.Job.department_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#jobs.models.Job.description" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jobs.models.Job.get_next_by_created_date">
+<span class="sig-name descname"><span class="pre">get_next_by_created_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.models.Job.get_next_by_created_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jobs.models.Job.get_previous_by_created_date">
+<span class="sig-name descname"><span class="pre">get_previous_by_created_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">created_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.models.Job.get_previous_by_created_date" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#jobs.models.Job.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.job_link">
+<span class="sig-name descname"><span class="pre">job_link</span></span><a class="headerlink" href="#jobs.models.Job.job_link" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.location">
+<span class="sig-name descname"><span class="pre">location</span></span><a class="headerlink" href="#jobs.models.Job.location" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#jobs.models.Job.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.owner">
+<span class="sig-name descname"><span class="pre">owner</span></span><a class="headerlink" href="#jobs.models.Job.owner" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.owner_id">
+<span class="sig-name descname"><span class="pre">owner_id</span></span><a class="headerlink" href="#jobs.models.Job.owner_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.rating_count">
+<span class="sig-name descname"><span class="pre">rating_count</span></span><a class="headerlink" href="#jobs.models.Job.rating_count" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.rating_total">
+<span class="sig-name descname"><span class="pre">rating_total</span></span><a class="headerlink" href="#jobs.models.Job.rating_total" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.ratings">
+<span class="sig-name descname"><span class="pre">ratings</span></span><a class="headerlink" href="#jobs.models.Job.ratings" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.tags">
+<span class="sig-name descname"><span class="pre">tags</span></span><a class="headerlink" href="#jobs.models.Job.tags" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Job.title">
+<span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#jobs.models.Job.title" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="jobs.models.Job.update_rate">
+<span class="sig-name descname"><span class="pre">update_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.models.Job.update_rate" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="jobs.models.Tag">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jobs.models.</span></span><span class="sig-name descname"><span class="pre">Tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.models.Tag" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Department database model (TODO: might be used for recommendation system).</p>
+<section id="id7">
+<h3>Attributes<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>id<span class="classifier">str (uuid)</span></dt><dd><p>The id of a tag.</p>
+</dd>
+<dt>name: models.CharField (str)</dt><dd><p>The name of tag.</p>
+</dd>
+</dl>
+</section>
+<section id="id8">
+<h3>Methods<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>__str__(self)</dt><dd><p>Prints tag name.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="jobs.models.Tag.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#jobs.models.Tag.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="jobs.models.Tag.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#jobs.models.Tag.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Tag.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#jobs.models.Tag.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Tag.job_set">
+<span class="sig-name descname"><span class="pre">job_set</span></span><a class="headerlink" href="#jobs.models.Tag.job_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Tag.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#jobs.models.Tag.name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="jobs.models.Tag.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#jobs.models.Tag.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="module-jobs.views">
+<span id="jobs-views-module"></span><h2>jobs.views module<a class="headerlink" href="#module-jobs.views" title="Permalink to this heading"></a></h2>
+<p>Views for jobs: business logic</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="jobs.views.create_job">
+<span class="sig-prename descclassname"><span class="pre">jobs.views.</span></span><span class="sig-name descname"><span class="pre">create_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.views.create_job" title="Permalink to this definition"></a></dt>
+<dd><p>CREATE function: create an job item.</p>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>request<span class="classifier">http</span></dt><dd><p>Http request.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h3>
+<p>HttpResponce: redirect the user back to all jobs page.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jobs.views.delete_job">
+<span class="sig-prename descclassname"><span class="pre">jobs.views.</span></span><span class="sig-name descname"><span class="pre">delete_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.views.delete_job" title="Permalink to this definition"></a></dt>
+<dd><p>DELETE function: delete a particular job.</p>
+<section id="id9">
+<h3>Parameters<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>request<span class="classifier">http</span></dt><dd><p>Http request.</p>
+</dd>
+<dt>id: str</dt><dd><p>The id of the job item to be deleted.</p>
+</dd>
+</dl>
+</section>
+<section id="id10">
+<h3>Returns<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h3>
+<p>HttpResponce: redirect the user back to all jobs page.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jobs.views.get_all_jobs">
+<span class="sig-prename descclassname"><span class="pre">jobs.views.</span></span><span class="sig-name descname"><span class="pre">get_all_jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.views.get_all_jobs" title="Permalink to this definition"></a></dt>
+<dd><p>READ function: return all jobs to the user.</p>
+<section id="id11">
+<h3>Parameters<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>request: http</dt><dd><p>Http request</p>
+</dd>
+</dl>
+</section>
+<section id="id12">
+<h3>Returns<a class="headerlink" href="#id12" title="Permalink to this heading"></a></h3>
+<p>HttpResponce: job contents</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jobs.views.get_job_by_department">
+<span class="sig-prename descclassname"><span class="pre">jobs.views.</span></span><span class="sig-name descname"><span class="pre">get_job_by_department</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.views.get_job_by_department" title="Permalink to this definition"></a></dt>
+<dd><p>READ function: read jobs filtered by department.</p>
+<section id="id13">
+<h3>Parameters<a class="headerlink" href="#id13" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>request<span class="classifier">http</span></dt><dd><p>Http request.</p>
+</dd>
+</dl>
+</section>
+<section id="id14">
+<h3>Returns<a class="headerlink" href="#id14" title="Permalink to this heading"></a></h3>
+<p>HttpResponce: redirect the user back to filtered-by-department jobs page.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jobs.views.get_single_job">
+<span class="sig-prename descclassname"><span class="pre">jobs.views.</span></span><span class="sig-name descname"><span class="pre">get_single_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.views.get_single_job" title="Permalink to this definition"></a></dt>
+<dd><p>READ function: return one specific job to the user.
+Parameters
+———-
+request: http</p>
+<blockquote>
+<div><p>Http request</p>
+</div></blockquote>
+<dl class="simple">
+<dt>id: str</dt><dd><p>The id of the job item requested.</p>
+</dd>
+</dl>
+<section id="id15">
+<h3>Returns<a class="headerlink" href="#id15" title="Permalink to this heading"></a></h3>
+<p>HttpResponce: redirect the user to a job detail page.</p>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jobs.views.homePage">
+<span class="sig-prename descclassname"><span class="pre">jobs.views.</span></span><span class="sig-name descname"><span class="pre">homePage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.views.homePage" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jobs.views.index">
+<span class="sig-prename descclassname"><span class="pre">jobs.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.views.index" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="jobs.views.update_job">
+<span class="sig-prename descclassname"><span class="pre">jobs.views.</span></span><span class="sig-name descname"><span class="pre">update_job</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#jobs.views.update_job" title="Permalink to this definition"></a></dt>
+<dd><p>UPDATE function: update the info of a particular job</p>
+<section id="id16">
+<h3>Parameters<a class="headerlink" href="#id16" title="Permalink to this heading"></a></h3>
+<dl class="simple">
+<dt>request<span class="classifier">http</span></dt><dd><p>Http request.</p>
+</dd>
+<dt>id: str</dt><dd><p>The id of the job item to be updated.</p>
+</dd>
+</dl>
+</section>
+<section id="id17">
+<h3>Returns<a class="headerlink" href="#id17" title="Permalink to this heading"></a></h3>
+<p>HttpResponce: redirect the user back to all jobs page.</p>
+</section>
+</dd></dl>
+
+</section>
+<section id="module-jobs">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-jobs" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, jobrecom.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
