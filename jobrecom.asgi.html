@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>jobs API documentation</title>
-<meta name="description" content="" />
+<title>jobrecom.asgi API documentation</title>
+<meta name="description" content="ASGI config for jobrecom project …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -19,46 +19,36 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Package <code>jobs</code></h1>
+<h1 class="title">Module <code>jobrecom.asgi</code></h1>
 </header>
 <section id="section-intro">
+<p>ASGI config for jobrecom project.</p>
+<p>It exposes the ASGI callable as a module-level variable named <code>application</code>.</p>
+<p>For more information on this file, see
+<a href="https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/">https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/</a></p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+ASGI config for jobrecom project.
+
+It exposes the ASGI callable as a module-level variable named ``application``.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/
+&#34;&#34;&#34;
+
+import os
+
+from django.core.asgi import get_asgi_application
+
+os.environ.setdefault(&#39;DJANGO_SETTINGS_MODULE&#39;, &#39;jobrecom.settings&#39;)
+
+application = get_asgi_application()</code></pre>
+</details>
 </section>
 <section>
-<h2 class="section-title" id="header-submodules">Sub-modules</h2>
-<dl>
-<dt><code class="name"><a title="jobs.admin" href="admin.html">jobs.admin</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="jobs.apps" href="apps.html">jobs.apps</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="jobs.forms" href="forms.html">jobs.forms</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="jobs.migrations" href="migrations/index.html">jobs.migrations</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="jobs.models" href="models.html">jobs.models</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="jobs.tests" href="tests.html">jobs.tests</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="jobs.urls" href="urls.html">jobs.urls</a></code></dt>
-<dd>
-<div class="desc"><p>jobs URL Configuration …</p></div>
-</dd>
-<dt><code class="name"><a title="jobs.views" href="views.html">jobs.views</a></code></dt>
-<dd>
-<div class="desc"><p>Views for jobs: business logic</p></div>
-</dd>
-</dl>
 </section>
 <section>
 </section>
@@ -73,16 +63,9 @@
 <ul></ul>
 </div>
 <ul id="index">
-<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<li><h3>Super-module</h3>
 <ul>
-<li><code><a title="jobs.admin" href="admin.html">jobs.admin</a></code></li>
-<li><code><a title="jobs.apps" href="apps.html">jobs.apps</a></code></li>
-<li><code><a title="jobs.forms" href="forms.html">jobs.forms</a></code></li>
-<li><code><a title="jobs.migrations" href="migrations/index.html">jobs.migrations</a></code></li>
-<li><code><a title="jobs.models" href="models.html">jobs.models</a></code></li>
-<li><code><a title="jobs.tests" href="tests.html">jobs.tests</a></code></li>
-<li><code><a title="jobs.urls" href="urls.html">jobs.urls</a></code></li>
-<li><code><a title="jobs.views" href="views.html">jobs.views</a></code></li>
+<li><code><a title="jobrecom" href="index.html">jobrecom</a></code></li>
 </ul>
 </li>
 </ul>
